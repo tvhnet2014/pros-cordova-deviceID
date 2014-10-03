@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="pros.cordova.deviceID"
+    version="0.1.0">
+
+    <name>DeviceID</name>
+    <description>
+        This plugin will return the deviceID
+    </description>
+
+    <license>Apache 2.0</license>
+    
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/DeviceIDPlugin.js">
+       <clobbers target="cordova.getDeviceID" />
+    </js-module>
+	
+    <!-- wp8 -->
+    <platform name="wp8">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DeviceID">
+                <param name="wp-package" value="DeviceID"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/wp8/DeviceID.cs" />
+    </platform>	
+</plugin>
